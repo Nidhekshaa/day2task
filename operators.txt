@@ -1,0 +1,37 @@
+OPERATORS
+
+UNARY
+BINARY
+TERNARY
+
+ARITHEMATIC OPERATORS --> +,-,*,/,%,**,INCREMENT(++),DECREMENT(--)
+COMAPRISON OPERATORS --> =,==,===(strict equal),!=,!==,!===(strict not equal),<,>
+LOGICAL OPERATORS --> &&(AND),||(OR),!(NOT)
+
+SPREAD OPERATOR(...)
+
+let a=[1,2,3,4,5]
+let b=a //address of the a will be stored in the b
+b[2]=10;
+console.log(b); // output: [1,2,10,4,5]
+console.log(a); // output: [1,2,10,4,5]
+
+let a=[1,2,3,4,5]
+let b=[...a] //values of the 'a' will be stored in the b
+b[2]=10;
+console.log(b); // output: [1,2,10,4,5]
+console.log(a); // output: [1,2,3,4,5]
+
+//adding two arrays using SPREAD OPERATOR
+let a=[1,2,3,4,5];
+let b=[6,7,8,9,10];
+let x=[...a,...b];
+console.log(x);
+
+REST OPERATOR(...)
+
+let rest = (x,...values) =>{  //rest operator collects the different object using single object and variables before is used to seperate the values
+    console.log(x);
+    console.log(values);
+}
+rest(1,2,3,4);

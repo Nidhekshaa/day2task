@@ -1,0 +1,33 @@
+JAVASCRIPT
+
+DECLARING THE VARIABLE
+
+var a=5; //globally scopeD
+let b=10; //locally scoped
+const c=12; // variable cannot be changed
+
+console.log(a); // print statement
+
+DATATYPE 
+*number
+*string
+*boolean
+*big init ---> long int(in c)
+
+let num=123456n;  it represents the BIG INT as it contains n in the last
+let num=BigInt(123456); it also represents the BIG INT
+
+OBJECT DECALARATION
+
+let student={
+    name : ['abi','nidhi'],
+    age : 20,
+    isStudent : true,
+    address : {    // OBJECT WITHIN THE OBJECT
+        state : "tamilnadu",
+        city : "erode"
+    },
+    hello : function() {
+        console.log("Hello");
+    }
+}

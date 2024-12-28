@@ -1,0 +1,21 @@
+CONTROL FLOW - CONDITIONAL STATEMENTS
+
+simple if
+if else
+if else if else
+nested if
+switch
+|-->we can pass statement such as string,char,int,float,array of values
+ -->in json we cannot directly check the condition for array of value 
+    we use json.stringyfy(choice)===json.stringyfy([1,2,3])
+
+LOOP STATEMENTS
+
+for
+while
+do while
+
+for(;;){console.log("hi")} --> executed for infinite times
+IN for(); --> loop compeleted within the for
+
+while(){console.log("hi")} --> error

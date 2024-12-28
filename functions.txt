@@ -1,0 +1,179 @@
+FUNCTIONS
+
+non parameterized + without return 
+function fruit(){
+    console.log("apple");
+}
+fruit();
+
+//non parameterized + with return 
+function fruit(){
+    let a="apple";
+    return a;
+}
+console.log(fruit());
+
+//with parameters + without return
+function fruit(a){
+    console.log(a);
+}
+var a="apple";
+fruit(a);
+
+//with parameters + with return
+function fruit(a){
+    return a;
+}
+var a="apple";
+let b=fruit(a);
+console.log(b);
+
+ARROW FUNCTION
+let apple = () =>{
+    console.log("apple");
+}
+apple();
+
+let orange = () => "orange";
+console.log(orange());
+
+
+CALL BACK FUNCTION
+   A FUNCTION WITHIN ANOTHER FUNCTION AS A PARAMETER
+
+let atttendence = (lunch) =>{
+    console.log("PRESENT");
+    lunch(home);
+}
+let lunch = (home) =>{
+    console.log("lunch completed");
+    home();
+}
+let home = () =>{
+    console.log("boarded the bus");
+}
+// atttendence(lunch);
+
+CALLBACK HELL
+
+atttendence(() =>{
+    lunch(() =>{
+        home(() =>{
+            console.log("Day completed");
+        })
+    })
+})
+
+PROMISE
+ By using this the function should give some result
+ Instead of callback it is used
+
+function attendance()
+{
+    return new Promise((resolve,reject)=>
+    {
+        let att = true;
+        if(att)
+            resolve("present")
+        else 
+            reject("absent")
+    })
+}
+function lunch()
+{
+    return new Promise((resolve,reject)=>
+        {
+            let lun = false;
+            if(lun)
+                resolve("had lunch")
+            else 
+                reject("did not have lunch")
+        })
+}
+function go()
+{
+    return new Promise((resolve,reject)=>
+        {
+            let going = true;
+            if(going)
+                resolve("went")
+            else 
+                reject("hostel")
+        })
+}
+attendance().then((value)=>{console.log(value);return lunch()})
+            .then((value)=>{console.log(value);return go()})
+            .then((value)=>{console.log(value);})
+            .catch((err)=> console.error(err))
+
+ASYNCRONUS --> Task is done simulatenously
+SYNCRONUS --> One task is performed after another
+
+async is a keyword to work as ASYNCRONUS
+await is a keyword ,it waits until the data is fetched
+
+function attendance()
+      {
+          return new Promise((resolve,reject)=>
+          {
+              let att = true;
+              if(att)
+                  resolve("present")
+              else 
+                  reject("absent")
+          })
+      }
+      function lunch()
+      {
+          return new Promise((resolve,reject)=>
+              {
+                  let lun = false;
+                  if(lun)
+                      resolve("had lunch")
+                  else 
+                      reject("did not have lunch")
+              })
+      }
+      function go()
+      {
+          return new Promise((resolve,reject)=>
+              {
+                  let going = true;
+                  if(going)
+                      resolve("went")
+                  else 
+                      reject("hostel")
+              })
+      } 
+    async function fullday()
+    {
+        try
+        {
+            let atten = await attendance();
+            console.log(atten)
+            let lunc = await lunch()
+            console.log(lunc)
+            let home = await go()
+            console.log(home)
+        }
+        catch(error)
+        {
+            console.error(error)
+        }
+    }
+    fullday()
+
+CALLBACK FUNCTION WITH THE FILE NAME PASSING AS PARAMETER
+
+function fun1(fun2,name){
+    setTimeout(() =>{
+        console.log(`file ${name} is in process`);
+        console.log(`file ${name} got downloaded`);
+        fun2();
+    },2000)
+    
+}
+function fun2(){
+    console.log('download completed');
+}
+fun1(fun2,"abc"); //FUNCTION ALONGWITH FILE NAME PASSING AS PARAMETER
